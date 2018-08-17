@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Oskar Grzelak</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__text-box-out">
+            <div class="header__text-box-in">
+                <span class="heading-primary heading-primary--main">Hi!</span>
+                <span class="heading-primary heading-primary--main">I'm Oskar</span>
+                <span class="heading-primary heading-primary--sub">I will code your dreams</span>
+
+                <ul class="header__btn-list">
+                    <li class="header__btn-list-item"><a href="#" class="btn btn--big" id="contact-me-btn">Contact me</a></li>
+                    <li class="header__btn-list-item"><a href="#about-me" class="btn btn--small" id="about-me-btn">About me</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-about" id="about-me">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">This is who I am</h2>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <p class="paragraph">
+                            <span>I</span> was always chasing my dreams and fighting with my weaknesses. As a teenager, I imagined myself as a Shaolin warrior so I started kung-fu training. To overcome a fear of heights I am climbing and I really enjoy it. I studied econometrics because I love statistics. It has been always a dream for me to work in a book market so I become a marketing and PR specialist at SQN Publishing.
+                    </p>
+                    <p class="paragraph">
+                            <span>T</span>hen I followed my fiancée to Denmark. I was forced to left my job but I considered this as a chance to grasp another dream. I completed some online courses for web developers and javascript developers, I worked hard with my own projects and I decided to learn Danish. Now I feel I am ready to show everyone what I am capable of as a programmer and web developer.
+                    </p>
+                    <p class="paragraph">
+                            <span>I</span> hope you are the one who will challenge me soon with some hard projects. There is nothing better then a real struggle finished with huge success.
+                    </p>
+                </div>
+                <div class="col-1-of-2">
+                    <div class="u-img-shape">
+                        <img src="img/img-1.jpg" alt="Oskar Grzelak" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-portfolio">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">Check my latest projects</h2>
+            </div>
+            <div class="portfolio">
+                <figure class="portfolio__project fade active">
+                    <img src="img/project-1.JPG" alt="Project 1" class="portfolio__img">
+                    <figcaption class="portfolio__caption">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum magni quis laudantium impedit sunt minima optio! Doloremque id maxime quas modi facere, iste suscipit ad cumque nesciunt alias sapiente hic.
+                    </figcaption>
+                </figure>
+                <figure class="portfolio__project fade unactive">
+                    <img src="img/project-2.JPG" alt="Project 2" class="portfolio__img">
+                    <figcaption class="portfolio__caption">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum magni quis laudantium impedit sunt minima optio! Doloremque id maxime quas modi facere, iste suscipit ad cumque nesciunt alias sapiente hic.
+                    </figcaption>
+                </figure>
+                <figure class="portfolio__project fade unactive">
+                    <img src="img/project-3.JPG" alt="Project 3" class="portfolio__img">
+                    <figcaption class="portfolio__caption">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum magni quis laudantium impedit sunt minima optio! Doloremque id maxime quas modi facere, iste suscipit ad cumque nesciunt alias sapiente hic.
+                    </figcaption>
+                </figure>
+                <a class="portfolio__arrow portfolio__arrow--left" id="prev"></a>
+                <a class="portfolio__arrow portfolio__arrow--right" id="next"></a>
+            </div>
+        </section>
+
+        <section class="section-contact">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">I can't wait to hear from you</h2>
+            </div>
+            <div class="contact">
+                <div class="contact__text-box-out">
+                    <div class="contact__text-box-in">
+                        <div class="contact__text">
+                            <span class="heading-tertiary heading-tertiary--main">You can</span>
+                            <span class="heading-tertiary heading-tertiary--main">also email me at</span>
+                            <span class="heading-tertiary heading-tertiary--sub">oskar.grzelak@gmail.com</span>
+                        </div>
+                    </div>  
+                </div>
+                <div class="contact__form">
+                    <form action="#" class="form">
+                        
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Full name" id="name" required>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Subject" id="subject">
+                        </div>
+                        <div class="form__group">
+                            <textarea rows="10" class="form__input" placeholder="Your message" required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <button class="btn btn--small">Send it</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
