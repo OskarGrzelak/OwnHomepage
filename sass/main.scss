@@ -80,7 +80,7 @@ body {
     text-transform: uppercase;
 
     &--main {
-        font-size: 4rem;
+        font-size: 3.9rem;
         font-weight: 300;
         letter-spacing: .3rem;
         line-height: 1.2;
@@ -88,7 +88,7 @@ body {
     }
 
     &--sub {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
         letter-spacing: .2rem;
         border-top: 1px solid $color-grey-dark;
         padding-top: 1rem;
@@ -97,7 +97,7 @@ body {
 }
 
 .paragraph {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     width: 70%;
     margin: 0 auto;
 
@@ -112,6 +112,27 @@ body {
     }
 }
 
+.shape-text {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    &:first-child {
+        margin-top: 3rem;
+    }
+
+    &--main {
+        font-size: 1.8rem;
+        letter-spacing: .2rem;
+    }
+    
+    &--sub {
+        font-size: 1.4rem;
+        border-top: 1px solid $color-grey-dark;
+        padding-top: 1.2rem;
+    }
+    
+}
+
 // UTILITIES
 
 .u-center-text {
@@ -123,9 +144,6 @@ body {
 }
 
 .u-img-shape {
-    height: 32rem;
-    width: 32rem;
-    transform: rotate(45deg) scale(1) translateY(10rem);
     overflow: hidden;
     margin: 0 auto;
     outline: .5rem solid $color-primary;
@@ -139,6 +157,38 @@ body {
             transform: rotate(-45deg) translate(2rem, -22rem) scale(1.1);
         }
     }
+
+    &--1 {
+        height: 32rem;
+        width: 32rem;
+        transform: rotate(45deg) scale(1) translate(-2rem, -2rem);
+    }
+
+    &--2 {
+        height: 25rem;
+        width: 25rem;
+        transform: rotate(45deg) scale(1) translate(10rem, 1rem);
+    }
+
+    &--3 {
+        height: 20rem;
+        width: 20rem;
+        transform: rotate(45deg) scale(1) translate(-17rem, 11.5rem);
+    }
+
+    &__text-box--2 {
+        height: 29.5rem;
+        width: 29.5rem;
+        transform: rotate(-45deg);
+        overflow: hidden;
+    }
+
+    &__text-box--3 {
+        height: 22rem;
+        width: 22rem;
+        transform: rotate(-45deg);
+        overflow: hidden;
+    }
 }
 
 // BUTTONS
@@ -150,13 +200,15 @@ body {
         display: inline-block;
         text-transform: uppercase;
         text-decoration: none;
+        color: $color-grey-dark;
         letter-spacing: .2rem;
+        border-bottom: 1px solid transparent;
         padding: 1px 0;
         transition: all .2s;
     }
 
     &:hover {
-        color: $color-primary;
+        color: $color-primary !important;
         border-bottom: 1px solid $color-primary;
         transform: scale(1.1) translateY(-2px);
     }
@@ -167,13 +219,12 @@ body {
 
     &--big {
         font-size: 2.5rem;
-        color: $color-grey-dark;
         border-bottom: 1px solid $color-grey-dark;
     }
 
     &--small {
         font-size: 1.5rem;
-        color: $color-grey-medium;
+        color: $color-grey-medium !important;
         border-bottom: 1px solid $color-grey-medium;
     }
 }
