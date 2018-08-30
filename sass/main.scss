@@ -329,8 +329,10 @@ body {
 
     &__project {
         width: 60%;
+        height: 42rem;
         margin: 0 auto;
         position: relative;
+        overflow: hidden;
 
         &:hover .portfolio__img{
             filter: blur(3px) brightness(70%);
@@ -398,6 +400,10 @@ body {
 }
 
 // SECTION CONTACT
+
+.section-contact {
+    padding-bottom: 3rem;
+}
 
 .contact {
     position: relative;
@@ -472,9 +478,9 @@ body {
 // FOOTER
 
 .footer {
-    background-color: $color-grey-dark;
-    padding: 8rem 0;
+    padding: 4rem 0;
     font-size: 1.4rem;
+    border: .3rem solid rgba($color-primary, .3);
 
     &__navigation {
         display: inline-block;
@@ -497,7 +503,6 @@ body {
 
         &:link,
         &:visited {
-            color: $color-grey-light;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: .2rem;
@@ -518,7 +523,6 @@ body {
     }
 
     &__copyright {
-        color: $color-grey-light;
         float: right;
         display: block;
         margin-right: 8rem;

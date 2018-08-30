@@ -222,8 +222,10 @@ body {
   position: relative; }
   .portfolio__project {
     width: 60%;
+    height: 42rem;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .portfolio__project:hover .portfolio__img {
       filter: blur(3px) brightness(70%); }
     .portfolio__project:hover .portfolio__caption {
@@ -268,6 +270,9 @@ body {
 
 .unactive {
   display: none; }
+
+.section-contact {
+  padding-bottom: 3rem; }
 
 .contact {
   position: relative;
@@ -317,9 +322,9 @@ body {
     border-bottom: 3px solid #15d600; }
 
 .footer {
-  background-color: #333;
-  padding: 8rem 0;
-  font-size: 1.4rem; }
+  padding: 4rem 0;
+  font-size: 1.4rem;
+  border: 0.3rem solid rgba(21, 214, 0, 0.3); }
   .footer__navigation {
     display: inline-block;
     margin-left: 8rem; }
@@ -330,7 +335,6 @@ body {
     .footer__item:not(:last-child) {
       margin-right: 2rem; }
   .footer__link:link, .footer__link:visited {
-    color: #eee;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: .2rem;
@@ -344,7 +348,6 @@ body {
   .footer__link:active {
     transform: translateY(1px); }
   .footer__copyright {
-    color: #eee;
     float: right;
     display: block;
     margin-right: 8rem; }
