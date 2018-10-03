@@ -186,7 +186,7 @@ body {
 
 .header {
   height: 80vh;
-  background-image: linear-gradient(135deg, #fff 0%, #fff 30%, rgba(179, 255, 171, 0.8) 30%, rgba(18, 255, 247, 0.8) 100%), url(../img/hero.jpg);
+  background-image: linear-gradient(135deg, #fff 0%, #fff 30%, rgba(179, 255, 171, 0.8) 30%, rgba(18, 255, 247, 0.8) 100%), url(../img/hero-min.jpg);
   background-size: cover;
   position: relative; }
   .header__text-box-out {
@@ -229,7 +229,7 @@ body {
   position: relative; }
   .portfolio__project {
     width: 60%;
-    height: 42rem;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     overflow: hidden; }
@@ -244,8 +244,9 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 80%;
     transform: translate(-50%, -50%);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: #fff;
     opacity: 0;
     transition: all .3s; }
@@ -254,20 +255,20 @@ body {
     .portfolio__arrow--left {
       position: absolute;
       top: 50%;
-      left: 8rem;
-      height: 10rem;
-      width: 10rem;
-      border-bottom: 1rem solid #15d600;
-      border-left: 1rem solid #15d600;
+      left: 10%;
+      height: 5rem;
+      width: 5rem;
+      border-bottom: 0.5rem solid #15d600;
+      border-left: 0.5rem solid #15d600;
       transform: translateY(-50%) rotate(45deg); }
     .portfolio__arrow--right {
       position: absolute;
       top: 50%;
-      right: 8rem;
-      height: 10rem;
-      width: 10rem;
-      border-top: 1rem solid #15d600;
-      border-right: 1rem solid #15d600;
+      right: 10%;
+      height: 5rem;
+      width: 5rem;
+      border-top: 0.5rem solid #15d600;
+      border-right: 0.5rem solid #15d600;
       transform: translateY(-50%) rotate(45deg); }
     .portfolio__arrow:hover {
       transform: translateY(-50%) rotate(45deg) scale(1.2); }
@@ -283,7 +284,7 @@ body {
 
 .contact {
   position: relative;
-  background-image: linear-gradient(45deg, rgba(18, 255, 247, 0.8) 0%, rgba(179, 255, 171, 0.8) 70%, #fff 70%, #fff 100%), url(../img/hero.jpg);
+  background-image: linear-gradient(45deg, rgba(18, 255, 247, 0.8) 0%, rgba(179, 255, 171, 0.8) 70%, #fff 70%, #fff 100%), url(../img/hero-min.jpg);
   background-size: 100%; }
   .contact__form {
     width: 50%;

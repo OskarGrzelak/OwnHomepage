@@ -272,7 +272,7 @@ body {
                             rgba(#b3ffab, .8) 30%, 
                             rgba(#12fff7, .8) 100%
                         ),
-                        url(../img/hero.jpg);       
+                        url(../img/hero-min.jpg);       
     background-size: cover;
     position: relative;
 
@@ -336,7 +336,7 @@ body {
 
     &__project {
         width: 60%;
-        height: 42rem;
+        height: 100%;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
@@ -359,8 +359,9 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 80%;
         transform: translate(-50%, -50%);
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         color: $color-white;
         opacity: 0;
         transition: all .3s;
@@ -373,22 +374,22 @@ body {
         &--left {
             position: absolute;
             top: 50%;
-            left: 8rem;
-            height: 10rem;
-            width: 10rem;
-            border-bottom: 1rem solid $color-primary;
-            border-left: 1rem solid $color-primary;
+            left: 10%;
+            height: 5rem;
+            width: 5rem;
+            border-bottom: .5rem solid $color-primary;
+            border-left: .5rem solid $color-primary;
             transform: translateY(-50%) rotate(45deg);
         }
 
         &--right {
             position: absolute;
             top: 50%;
-            right: 8rem;
-            height: 10rem;
-            width: 10rem;
-            border-top: 1rem solid $color-primary;
-            border-right: 1rem solid $color-primary;
+            right: 10%;
+            height: 5rem;
+            width: 5rem;
+            border-top: .5rem solid $color-primary;
+            border-right: .5rem solid $color-primary;
             transform: translateY(-50%) rotate(45deg);
         }
 
@@ -421,7 +422,7 @@ body {
                             $color-white 70%, 
                             $color-white 100%
                         ),
-                        url(../img/hero.jpg);
+                        url(../img/hero-min.jpg);
     background-size: 100%;
     
     &__form {
