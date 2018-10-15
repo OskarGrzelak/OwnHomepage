@@ -11,6 +11,22 @@ $grid-width: 114rem;
 $gutter-vertical: 12rem;
 $gutter-horizontal: 3%;
 
+// MIXINS
+
+@mixin respond($breackpoint) {
+    @if $breackpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content }; // 600px
+    }
+
+    @if $breackpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content }; // 900px
+    }
+
+    @if $breackpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content }; // 1200px
+    }
+}
+
 // BASE
 
 * {
@@ -21,11 +37,29 @@ $gutter-horizontal: 3%;
 
 html {
     font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
 }
 
 body {
     box-sizing: border-box;
     padding: 3rem;
+    width: 100%;
+    overflow-x: hidden;
+
+    @include respond(tab-land) {
+        padding: 2rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 1rem;
+    }
 }
 
 ::selection {
@@ -52,6 +86,16 @@ body {
         letter-spacing: .5rem;
         line-height: 1.2;
         padding-bottom: 1.2rem;
+
+        @include respond(tab-port) {
+            font-size: 8.5rem;
+            letter-spacing: 1rem;
+        }
+
+        @include respond(phone) {
+            font-size: 4.5rem;
+            letter-spacing: .4rem;
+        }
     }
 
     &--sub {
@@ -60,6 +104,17 @@ body {
         border-top: 1px solid $color-grey-dark;
         padding-top: 1rem;
         margin-bottom: 5rem;
+
+        @include respond(tab-port) {
+            font-size: 3.8rem;
+            margin-bottom: 8rem;
+        }
+
+        @include respond(phone) {
+            font-size: 2.2rem;
+            letter-spacing: .1rem;
+            margin-bottom: 3rem;
+        }
     }
 }
 
@@ -80,19 +135,27 @@ body {
     text-transform: uppercase;
 
     &--main {
-        font-size: 3.9rem;
+        font-size: 3.5rem;
         font-weight: 300;
         letter-spacing: .3rem;
         line-height: 1.2;
         padding-bottom: 1.2rem;
+
+        @include respond(phone) {
+            font-size: 2.5rem;
+        }
     }
 
     &--sub {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         letter-spacing: .2rem;
         border-top: 1px solid $color-grey-dark;
         padding-top: 1rem;
         margin-bottom: 5rem;
+
+        @include respond(phone) {
+            font-size: 1.8rem;
+        }
     }
 }
 
@@ -109,6 +172,14 @@ body {
         font-size: 2rem;
         color: $color-primary;
         font-weight: 700;
+    }
+
+    @include respond(tab-land) {
+        width: 80%;
+    }
+
+    @include respond(tab-port) {
+        width: 90%;
     }
 }
 
@@ -155,6 +226,9 @@ body {
     
         & .about-img {
             transform: rotate(-45deg) translate(7%, -60%) scale(1.1);
+            @include respond(phone) {
+                transform: rotate(0) translate(-25%, -30%) scale(1.1);
+            }
         }
     }
 
@@ -163,6 +237,15 @@ body {
         width: 23rem;
         height: 23rem;
         transform: rotate(45deg) scale(1);
+
+        @include respond(tab-port) {
+            margin: 10rem auto 0 auto;
+        }
+
+        @include respond(phone) {
+            transform: rotate(0) scale(1);
+            margin: 10rem auto 0 auto;
+        }
     }
 
     &--2 {
@@ -170,6 +253,17 @@ body {
         width: 24rem;
         height: 24rem;
         transform: rotate(45deg) scale(1);
+
+        @include respond(tab-port) {
+            margin: 10rem auto 10rem auto;
+        }
+
+        @include respond(phone) {
+            transform: rotate(0) scale(1);
+            width: 30rem;
+            height: 18rem;
+            margin: 0 auto 10rem auto;
+        }
     }
 
     &--3 {
@@ -177,6 +271,16 @@ body {
         width: 20rem;
         margin-top: -5rem;
         transform: rotate(45deg) scale(1);
+
+        @include respond(tab-port) {
+            margin: 10rem auto 0 auto;
+        }
+
+        @include respond(phone) {
+            transform: rotate(0) scale(1);
+            width: 30rem;
+            height: 15rem;
+        }
     }
 
     &__text-box--2 {
@@ -185,6 +289,11 @@ body {
         width: 26rem;
         transform: rotate(-45deg);
         overflow: hidden;
+
+        @include respond(phone) {
+            transform: rotate(0) scale(1);
+            width: 30rem;
+        }
     }
 
     &__text-box--3 {
@@ -192,6 +301,25 @@ body {
         width: 24rem;
         transform: rotate(-45deg);
         overflow: hidden;
+
+        @include respond(phone) {
+            transform: rotate(0) scale(1);
+            width: 30rem;
+        }
+    }
+}
+
+.display-over-900 {
+    @include respond(tab-port) {
+        display: none !important;
+    }
+}
+
+.display-under-900 {
+    display: none !important;
+
+    @include respond(tab-port) {
+        display: block !important;
     }
 }
 
@@ -276,6 +404,19 @@ body {
     background-size: cover;
     position: relative;
 
+    @include respond(tab-port) {
+        background-image: linear-gradient(
+                            135deg,
+                            rgba(#b3ffab, .8) 0%, 
+                            rgba(#12fff7, .8) 100%
+                        ),
+                        url(../img/hero-min.jpg);
+    }
+
+    @include respond(phone) {
+        height: 60vh;
+    }
+
     &__text-box-out {
         position: absolute;
         height: 40rem;
@@ -285,6 +426,19 @@ body {
         background-color: $color-white;
         transform: rotate(45deg);
         text-align: center;
+
+        @include respond(tab-port) {
+            height: 55rem;
+            width: 55rem;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        @include respond(phone) {
+            height: 32rem;
+            width: 32rem;
+        }
     }
 
     &__text-box-in {
@@ -295,6 +449,16 @@ body {
         top: 0;
         transform: rotate(-45deg);
         padding-top: 2rem;
+
+        @include respond(tab-port) {
+            height: 55rem;
+            width: 55rem;
+        }
+
+        @include respond(phone) {
+            height: 32rem;
+            width: 32rem;
+        }
     }
 
     &__btn-list {
@@ -322,6 +486,12 @@ body {
     width: 155%;
     transform: rotate(-45deg) translate(7%, -60%);
     transition: all .4s;
+
+    @include respond(phone) {
+        top: 0;
+        left: 0;
+        transform: rotate(0) translate(-25%, -30%);
+    }
 }
 
 // SECTION PORTFOLIO
@@ -347,6 +517,10 @@ body {
 
         &:hover .portfolio__caption {
             opacity: 1;
+        }
+
+        @include respond(tab-port) {
+            width: 80%;
         }
     }
 
@@ -380,6 +554,16 @@ body {
             border-bottom: .5rem solid $color-primary;
             border-left: .5rem solid $color-primary;
             transform: translateY(-50%) rotate(45deg);
+            @include respond(tab-port) {
+                left: 5%;
+                height: 4rem;
+                width: 4rem;
+            }
+            @include respond(phone) {
+                left: 3%;
+                height: 3rem;
+                width: 3rem;
+            }
         }
 
         &--right {
@@ -391,6 +575,16 @@ body {
             border-top: .5rem solid $color-primary;
             border-right: .5rem solid $color-primary;
             transform: translateY(-50%) rotate(45deg);
+            @include respond(tab-port) {
+                right: 5%;
+                height: 4rem;
+                width: 4rem;
+            }
+            @include respond(phone) {
+                right: 3%;
+                height: 3rem;
+                width: 3rem;
+            }
         }
 
         &:hover {
@@ -415,6 +609,7 @@ body {
 
 .contact {
     position: relative;
+    height: 70rem;
     background-image: linear-gradient(
                             45deg,
                             rgba(#12fff7, .8) 0%, 
@@ -423,32 +618,80 @@ body {
                             $color-white 100%
                         ),
                         url(../img/hero-min.jpg);
-    background-size: 100%;
+    background-size: cover;
+
+    @include respond(tab-port) {
+        height: 95rem;
+        background-image: linear-gradient(
+                            45deg,
+                            rgba(#12fff7, .8) 0%, 
+                            rgba(#b3ffab, .8) 100%,
+                        ),
+                        url(../img/hero-min.jpg);
+    }
     
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tab-port) {
+            padding: 4rem;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include respond(phone) {
+            padding: 3rem;
+            width: 100%;
+        }
     }
 
     &__text-box-out {
         position: absolute;
-        height: 40rem;
-        width: 40rem;
-        right: 15%;
+        height: 38rem;
+        width: 38rem;
+        right: 10%;
         top: 15%;
         background-color: $color-white;
         transform: rotate(45deg);
         text-align: center;
+        z-index: 50;
+
+        @include respond(tab-land) {
+            height: 35rem;
+            width: 35rem;
+        }
+    
+        @include respond(tab-port) {
+            left: 50%;
+            top: 75%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        @include respond(phone) {
+            height: 30rem;
+            width: 30rem;
+        }
     }
 
     &__text-box-in {
         position: absolute;
-        height: 40rem;
-        width: 40rem;
+        height: 38rem;
+        width: 38rem;
         right: 0;
         top: 0;
         transform: rotate(-45deg);
         padding-top: 2rem;
+
+        @include respond(tab-land) {
+            height: 35rem;
+            width: 35rem;
+        }
+
+        @include respond(phone) {
+            height: 30rem;
+            width: 30rem;
+        }
     }
 
     &__text {
@@ -472,7 +715,8 @@ body {
         padding: 1.5rem 2rem;
         background-color: rgba($color-white, .8);
         border: none;
-        width: 80%;
+        border-bottom: 3px solid transparent;
+        width: 90%;
         display: block;
 
         &:focus {
@@ -480,19 +724,49 @@ body {
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-primary;
         }
+
+        @include respond(tab-land) {
+            width: 100%;
+        }
+    }
+
+    textarea.form__input {
+        height: 30rem;
+        resize: none;
+        overflow: auto;
     }
 }
 
 // FOOTER
 
 .footer {
-    padding: 4rem 0;
+    padding: 6rem 0;
     font-size: 1.4rem;
-    border: .3rem solid rgba($color-primary, .3);
+    z-index: 100;
+    background-image: linear-gradient(
+                            45deg,
+                            rgba(#12fff7, .8) 0%, 
+                            rgba(#b3ffab, .8) 100%,
+                        );
+
+    @include respond(tab-port) {
+        margin-top: 10rem;
+    }
+
+    @include respond(phone) {
+        margin-top: 5rem;
+    }
 
     &__navigation {
         display: inline-block;
-        margin-left: 8rem;
+        margin-left: 6rem;
+
+        @include respond(tab-port) {
+            margin: 0 auto;
+            display: block;
+            width: 90%;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -517,11 +791,12 @@ body {
             display: inline-block;
             border-bottom: 1px solid transparent;
             transition: all .2s;
+            color: inherit;
         }
 
         &:hover {
-            color: $color-primary !important;
-            border-bottom: 1px solid $color-primary;
+            color: $color-white !important;
+            border-bottom: 1px solid $color-white;
             transform: scale(1.1) translateY(-2px);
         }
     
@@ -533,7 +808,14 @@ body {
     &__copyright {
         float: right;
         display: block;
-        margin-right: 8rem;
+        margin-right: 6rem;
+
+        @include respond(tab-port) {
+            float: none;
+            margin-right: 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
     }
 }
 
@@ -562,6 +844,15 @@ body {
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                margin-right: 0;
+            }
+        }
+
+        @include respond(tab-port) {
+            float: none;
+            width: 100% !important;
         }
     }
 
