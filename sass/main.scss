@@ -358,6 +358,12 @@ body {
         border-bottom: 1px solid $color-grey-medium;
     }
 
+    &--portfolio:link,
+    &--portfolio:visited {
+        color: $color-white;
+        margin-top: 2rem;
+    }
+
     &--form {
         font-size: 2rem;
         font-family: inherit;
