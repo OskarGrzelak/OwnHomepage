@@ -50,8 +50,6 @@ html {
 body {
     box-sizing: border-box;
     padding: 3rem;
-    width: 100%;
-    overflow-x: hidden;
 
     @include respond(tab-land) {
         padding: 2rem;
@@ -372,6 +370,10 @@ body {
 
 // ANIMATIONS
 
+.hidden {
+    opacity: 0;
+}
+
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -380,19 +382,111 @@ body {
   }
   
   @-webkit-keyframes fade {
-    from {opacity: .4} 
+    from {opacity: 0} 
     to {opacity: 1}
   }
   
   @keyframes fade {
-    from {opacity: .4} 
+    from {opacity: 0} 
     to {opacity: 1}
   }
+
+.move-in-left {
+
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+
+
+    @keyframes moveInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-10rem) rotate(45deg);
+        }
+    
+        80% {
+            transform: translateX(1rem) rotate(45deg);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translate(0) rotate(45deg);
+        }
+    }
+}
+
+.move-in-right {
+
+    animation-name: moveInRight;
+    animation-duration: 1.5s;
+
+
+    @keyframes moveInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(10rem) rotate(45deg);
+        }
+    
+        80% {
+            transform: translateX(-1rem) rotate(45deg);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translate(0) rotate(45deg);
+        }
+    }
+}
+
+.move-in-left-phone {
+
+    animation-name: moveInLeftPhone;
+    animation-duration: 1.5s;
+
+
+    @keyframes moveInLeftPhone {
+        0% {
+            opacity: 0;
+            transform: translateX(-10rem);
+        }
+    
+        80% {
+            transform: translateX(1rem);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+}
+
+.move-in-right-phone {
+
+    animation-name: moveInRightPhone;
+    animation-duration: 1.5s;
+
+
+    @keyframes moveInRightPhone {
+        0% {
+            opacity: 0;
+            transform: translateX(10rem);
+        }
+    
+        80% {
+            transform: translateX(-1rem);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+}
 
 // HEADER
 
 .header {
-    height: 80vh;
+    height: 80rem;
     background-image: linear-gradient(
                             135deg,
                             $color-white 0%, 
@@ -426,6 +520,7 @@ body {
         background-color: $color-white;
         transform: rotate(45deg);
         text-align: center;
+        overflow: hidden;
 
         @include respond(tab-port) {
             height: 55rem;
@@ -656,6 +751,8 @@ body {
         transform: rotate(45deg);
         text-align: center;
         z-index: 50;
+        margin: 0;
+        overflow: hidden;
 
         @include respond(tab-land) {
             height: 35rem;
