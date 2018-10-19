@@ -137,22 +137,22 @@
                     </div>  
                 </div>
                 <div class="contact__form">
-                    <form action="#" class="form">
+                    <form action="mailer.php" method="POST" class="form">
                         
                         <div class="form__group">
-                            <input type="text" class="form__input" placeholder="Full name" id="name" required>
+                            <input name="name" type="text" class="form__input" placeholder="Full name" id="name" required>
                         </div>
                         <div class="form__group">
-                            <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                            <input name="email" type="email" class="form__input" placeholder="Email address" id="email" required>
                         </div>
                         <div class="form__group">
-                            <input type="text" class="form__input" placeholder="Subject" id="subject">
+                            <input name="subject" type="text" class="form__input" placeholder="Subject" id="subject">
                         </div>
                         <div class="form__group">
-                            <textarea class="form__input" placeholder="Your message" required></textarea>
+                            <textarea name="message" class="form__input" placeholder="Your message" required></textarea>
                         </div>
                         <div class="form__group">
-                            <button class="btn btn--form">Send it</button>
+                            <input type="submit" name="submit" class="btn btn--form" value="Send it">
                         </div>
                     </form>
                 </div>

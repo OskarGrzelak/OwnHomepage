@@ -416,6 +416,7 @@ body {
     .portfolio__project:hover .portfolio__img {
       filter: blur(3px) brightness(70%); }
     .portfolio__project:hover .portfolio__caption {
+      visibility: visible;
       opacity: 1; }
     @media only screen and (max-width: 56.25em) {
       .portfolio__project {
@@ -432,7 +433,14 @@ body {
     font-size: 1.6rem;
     color: #fff;
     opacity: 0;
+    visibility: hidden;
     transition: all .3s; }
+    @media only screen and (max-width: 37.5em) {
+      .portfolio__caption p {
+        display: none; } }
+    @media only screen and (max-width: 37.5em) {
+      .portfolio__caption a.btn--portfolio {
+        margin: 0; } }
   .portfolio__arrow {
     transition: all 0.2s; }
     .portfolio__arrow--left {

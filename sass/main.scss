@@ -617,6 +617,7 @@ body {
         }
 
         &:hover .portfolio__caption {
+            visibility: visible;
             opacity: 1;
         }
 
@@ -639,7 +640,20 @@ body {
         font-size: 1.6rem;
         color: $color-white;
         opacity: 0;
+        visibility: hidden;
         transition: all .3s;
+
+        & p {
+            @include respond(phone) {
+                display: none;
+            }
+        }
+
+        & a.btn--portfolio {
+            @include respond(phone) {
+                margin: 0;
+            }
+        }
     }
 
     &__arrow {
