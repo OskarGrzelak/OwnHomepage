@@ -595,10 +595,59 @@ body {
     }
 }
 
+// SECTION SKILLS
+
+.section-skills {
+    padding: 10rem 0;
+    width: 80%;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+        width: 90%;
+    }
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding-bottom: 5rem;
+    }
+}
+
+.skills {
+    &__set {    
+        margin-bottom: 0;
+        @include respond(tab-port) {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        letter-spacing: .1rem;
+        font-size: 1.8rem;
+
+        @include respond(tab-port) {
+            text-align: center;
+        }
+    }
+
+    &__item {
+        margin-top: 1.5rem;
+
+        & span {
+            color: rgba($color-primary, .6);
+            padding-right: 1rem;
+        }
+    }
+}
+
 // SECTION PORTFOLIO
 
 .section-portfolio {
     padding: 10rem 0;
+
+    @include respond(tab-port) {
+        padding-top: 0;
+    }
 }
 
 .portfolio {
@@ -947,7 +996,7 @@ body {
 }
 
 .row {
-    //max-width: $grid-width;
+    max-width: $grid-width;
     margin: 0 auto;
 
     &:not(:last-child) {
